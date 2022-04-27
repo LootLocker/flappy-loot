@@ -14,6 +14,10 @@ public class Leaderboard : MonoBehaviour
 
     public void SubmitScore()
     {
+        if(canUploadScore == false)
+        {
+            return;
+        }
         // Get the players saved ID, and add the incremental characters
         string playerID = PlayerPrefs.GetString("PlayerID") + GetAndIncrementScoreCharacters();
         string metadata = PlayerPrefs.GetString("PlayerName");
